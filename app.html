@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PandaFast App</title>
+    <style>
+        /* Base styles and variables */
+        :root {
+            --primary-color: #4CAF50;
+            --primary-dark: #388E3C;
+            --primary-light: #C8E6C9;
+            --secondary-color: #8D6E63;
+            --accent-color: #FF9800;
+            --text-primary: #212121;
+            --text-secondary: #616161;
+            --text-light: #FFFFFF;
+            --background-color: #F5F5F5;
+            --card-color: #FFFFFF;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+            --font-main: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            height: 100vh;
+            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: var(--card-color);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Header */
+        .app-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .app-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .app-logo img {
+            height: 30px;
+        }
+
+        .app-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Tab Navigation */
+        .tab-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: var(--card-color);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+            padding: 10px 0;
+            position: relative;
+            z-index: 10;
+        }
+
+        .tab-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 0;
+            cursor: pointer;
+            width: 25%;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .tab-item.active {
+            color: var(--primary-color);
+        }
+
+        .tab-icon {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .tab-label {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .app-content {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Timer Screen */
+        .timer-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            height: 100%;
+        }
+
+        .timer-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 30px 0;
+        }
+
+        .timer-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: var(--card-color);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-progress {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(var(--primary-color) 0% 45%, var(--primary-light) 45% 100%);
+        }
+
+        .timer-inner {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background-color: var(--card-color);
+            top: 5%;
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .timer-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .timer-method {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .timer-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .timer-btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            outline: none;
+        }
+
+        .timer-btn.primary {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+        }
+
+        .timer-btn.primary:hover {
+            background-color: var(--primary-dark);
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+        }
+
+        .timer-btn.secondary {
+            background-color: var(--card-color);
+            color: var(--text-secondary);
+            border: 1px solid var(--text-secondary);
+        }
+
+        .timer-btn.secondary:hover {
+            background-color: var(--background-color);
+        }
+
+        /* Panda Container */
+        .panda-container {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .panda-character {
+            width: 150px;
+            height: 150px;
+            position: relative;
+        }
+
+        .panda-message {
+            background-color: var(--background-color);
+            border-radius: 20px;
+            padding: 15px 20px;
+            margin-top: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .panda-message:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-width: 0 10px 10px 10px;
+            border-style: solid;
+            border-color: transparent transparent var(--background-color) transparent;
+        }
+
+        /* Stats Screen */
+        .stats-screen {
+            padding: 20px;
+            display: none;
+        }
+
+        .stats-header {
+            margin-bottom: 20px;
+        }
+
+        .stats-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .stats-subtitle {
+            color: var(--text-secondary);
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .stats-card {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stats-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stats-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .stats-chart-container {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
+        }
+
+        .stats-chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .chart-title {
+            font-weight: 600;
+        }
+
+        .chart-options {
+            display: flex;
+            gap: 10px;
+        }
+
+        .chart-option {
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chart-option.active {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+        }
+
+        .stats-chart {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+
+        .chart-bar {
+            width: 30px;
+            background-color: var(--primary-light);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .chart-bar-inner {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            border-radius: 5px 5px 0 0;
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .stats-streak {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .streak-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .streak-details {
+            flex: 1;
+        }
+
+        .streak-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .streak-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Panda Screen */
+        .panda-screen {
+            padding: 20px;
+            display: none;
+        }
+
+        .panda-header {
+            margin-bottom: 20px;
+        }
+
+        .panda-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .panda-subtitle {
+            color: var(--text-secondary);
+        }
+
+        .panda-showcase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 30px 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
+        }
+
+        .panda-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .panda-level {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .panda-stats {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .panda-stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .panda-stat-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .panda-stat-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .panda-progress {
+            width: 100%;
+            height: 15px;
+            background-color: var(--primary-light);
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .panda-progress-bar {
+            height: 100%;
+            width: 75%;
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .panda-accessories {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
+        }
+
+        .accessories-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .accessories-title {
+            font-weight: 600;
+        }
+
+        .bamboo-balance {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .bamboo-icon {
+            font-size: 1.2rem;
+        }
+
+        .accessories-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .accessory-item {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            aspect-ratio: 1/1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .accessory-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .accessory-icon {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .accessory-new {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            border: 2px solid var(--card-color);
+        }
+
+        .panda-challenges {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .challenges-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .challenge-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .challenge-item:last-child {
+            border-bottom: none;
+        }
+
+        .challenge-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .challenge-info {
+            flex: 1;
+        }
+
+        .challenge-name {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .challenge-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .challenge-reward {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        /* Settings Screen */
+        .settings-screen {
+            padding: 20px;
+            display: none;
+        }
+
+        .settings-header {
+            margin-bottom: 20px;
+        }
+
+        .settings-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .settings-subtitle {
+            color: var(--text-secondary);
+        }
+
+        .settings-section {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 25px;
+        }
+
+        .settings-section-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .settings-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--background-color);
+        }
+
+        .settings-option:last-child {
+            border-bottom: none;
+        }
+
+        .option-name {
+            font-weight: 500;
+        }
+
+        .option-toggle {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 28px;
+        }
+
+        .option-toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--text-secondary);
+            transition: var(--transition);
+            border-radius: 28px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 22px;
+            width: 22px;
+            left: 3px;
+            bottom: 3px;
+            background-color: var(--card-color);
+            transition: var(--transition);
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--primary-color);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(22px);
+        }
+
+        .option-value {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .arrow-icon {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .settings-button {
+            background-color: var(--card-color);
+            border-radius: var(--border-radius);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .settings-button:hover {
+            background-color: var(--background-color);
+        }
+
+        .settings-button.danger {
+            color: #F44336;
+        }
+
+        .settings-version {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 30px;
+        }
+
+        /* Active screen */
+        .timer-screen {
+            display: flex;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- App Header -->
+        <div class="app-header">
+            <div class="app-logo">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="45" fill="#f5f5f5" />
+                    <circle cx="30" cy="35" r="15" fill="#000" />
+                    <circle cx="70" cy="35" r="15" fill="#000" />
+                    <ellipse cx="50" cy="65" rx="20" ry="15" fill="#000" />
+                    <circle cx="33" cy="32" r="5" fill="#fff" />
+                    <circle cx="73" cy="32" r="5" fill="#fff" />
+                    <ellipse cx="50" cy="55" rx="10" ry="8" fill="#fff" />
+                    <ellipse cx="50" cy="50" rx="35" ry="32" stroke="#4CAF50" stroke-width="3" fill="none" />
+                </svg>
+                <div class="app-title">PandaFast</div>
+            </div>
+            <div class="header-actions">
+                <i class="fas fa-bell header-icon"></i>
+                <i class="fas fa-cog header-icon"></i>
+            </div>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="app-content">
+            <!-- Timer Screen -->
+            <div class="timer-screen">
+                <div class="timer-container">
+                    <div class="timer-progress"></div>
+                    <div class="timer-circle">
+                        <div class="timer-inner">
+                            <div class="timer-value">14:26</div>
+                            <div class="timer-label">hours remaining</div>
+                            <div class="timer-method">18:6 Method</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timer-actions">
+                    <button class="timer-btn secondary">End Fast</button>
+                    <button class="timer-btn primary">Pause</button>
+                </div>
+
+                <div class="panda-container">
+                    <div class="panda-character">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                            <!-- Panda Body -->
+                            <circle cx="100" cy="100" r="70" fill="#FFFFFF" stroke="#212121" stroke-width="3" />
+                            
+                            <!-- Panda Ears -->
+                            <circle cx="60" cy="60" r="20" fill="#212121" />
+                            <circle cx="140" cy="60" r="20" fill="#212121" />
+                            
+                            <!-- Panda Eyes -->
+                            <circle cx="80" cy="90" r="15" fill="#212121" />
+                            <circle cx="120" cy="90" r="15" fill="#212121" />
+                            
+                            <!-- Eye Highlights -->
+                            <circle cx="85" cy="85" r="5" fill="#FFFFFF" />
+                            <circle cx="125" cy="85" r="5" fill="#FFFFFF" />
+                            
+                            <!-- Panda Nose -->
+                            <ellipse cx="100" cy="105" rx="10" ry="8" fill="#212121" />
+                            
+                            <!-- Panda Mouth -->
+                            <path d="M85,120 C90,130 110,130 115,120" fill="none" stroke="#212121" stroke-width="3" stroke-linecap="round" />
+                            
+                            <!-- Hat Accessory -->
+                            <path d="M60,50 L140,50 L100,20 Z" fill="#FF9800" />
+                        </svg>
+                    </div>
+                    <div class="panda-message">
+                        You're doing great! Keep it up and I'll grow strong with you!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Screen -->
+            <div class="stats-screen">
+                <div class="stats-header">
+                    <div class="stats-title">Your Progress</div>
+                    <div class="stats-subtitle">Track your fasting journey</div>
+                </div>
+
+                <div class="stats-cards">
+                    <div class="stats-card">
+                        <div class="stats-value">16</div>
+                        <div class="stats-label">Fasts Completed</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-value">85%</div>
+                        <div class="stats-label">Completion Rate</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-value">18:6</div>
+                        <div class="stats-label">Favorite Method</div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="stats-value">750</div>
+                        <div class="stats-label">Bamboo Points</div>
+                    </div>
+                </div>
+
+                <div class="stats-chart-container">
+                    <div class="stats-chart-header">
+                        <div class="chart-title">Fasting Hours</div>
+                        <div class="chart-options">
+                            <div class="chart-option">Week</div>
+                            <div class="chart-option active">Month</div>
+                            <div class="chart-option">Year</div>
+                        </div>
+                    </div>
+                    <div class="stats-chart">
+                        <div class="chart-bar" style="height: 150px;">
+                            <div class="chart-bar-inner" style="height: 80%;"></div>
+                            <div class="chart-label">W1</div>
+                        </div>
+                        <div class="chart-bar" style="height: 150px;">
+                            <div class="chart-bar-inner" style="height: 60%;"></div>
+                            <div class="chart-label">W2</div>
+                        </div>
+                        <div class="chart-bar" style="height: 150px;">
+                            <div class="chart-bar-inner" style="height: 90%;"></div>
+                            <div class="chart-label">W3</div>
+                        </div>
+                        <div class="chart-bar" style="height: 150px;">
+                            <div class="chart-bar-inner" style="height: 75%;"></div>
+                            <div class="chart-label">W4</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-streak">
+                    <div class="streak-icon">7</div>
+                    <div class="streak-details">
+                        <div class="streak-title">Current Streak</div>
+                        <div class="streak-subtitle">Keep going! You're on a roll!</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panda Screen -->
+            <div class="panda-screen">
+                <div class="panda-header">
+                    <div class="panda-title">Your Panda</div>
+                    <div class="panda-subtitle">Customize and grow together</div>
+                </div>
+
+                <div class="panda-showcase">
+                    <div class="panda-character">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+                            <!-- Panda Body -->
+                            <circle cx="100" cy="100" r="70" fill="#FFFFFF" stroke="#212121" stroke-width="3" />
+                            
+                            <!-- Panda Ears -->
+                            <circle cx="60" cy="60" r="20" fill="#212121" />
+                            <circle cx="140" cy="60" r="20" fill="#212121" />
+                            
+                            <!-- Panda Eyes -->
+                            <circle cx="80" cy="90" r="15" fill="#212121" />
+                            <circle cx="120" cy="90" r="15" fill="#212121" />
+                            
+                            <!-- Eye Highlights -->
+                            <circle cx="85" cy="85" r="5" fill="#FFFFFF" />
+                            <circle cx="125" cy="85" r="5" fill="#FFFFFF" />
+                            
+                            <!-- Panda Nose -->
+                            <ellipse cx="100" cy="105" rx="10" ry="8" fill="#212121" />
+                            
+                            <!-- Panda Mouth -->
+                            <path d="M85,120 C90,130 110,130 115,120" fill="none" stroke="#212121" stroke-width="3" stroke-linecap="round" />
+                            
+                            <!-- Hat Accessory -->
+                            <path d="M60,50 L140,50 L100,20 Z" fill="#FF9800" />
+                            
+                            <!-- Scarf Accessory -->
+                            <path d="M60,130 C80,140 120,140 140,130" fill="none" stroke="#8D6E63" stroke-width="15" stroke-linecap="round" />
+                            <path d="M140,130 L160,160" fill="none" stroke="#8D6E63" stroke-width="10" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="panda-name">Bamboo</div>
+                    <div class="panda-level">Level 7</div>
+                    
+                    <div class="panda-stats">
+                        <div class="panda-stat">
+                            <div class="panda-stat-value">85%</div>
+                            <div class="panda-stat-label">Health</div>
+                        </div>
+                        <div class="panda-stat">
+                            <div class="panda-stat-value">90%</div>
+                            <div class="panda-stat-label">Happiness</div>
+                        </div>
+                        <div class="panda-stat">
+                            <div class="panda-stat-value">750</div>
+                            <div class="panda-stat-label">Points</div>
+                        </div>
+                    </div>
+                    
+                    <div class="panda-progress">
+                        <div class="panda-progress-bar"></div>
+                    </div>
+                </div>
+
+                <div class="panda-accessories">
+                    <div class="accessories-header">
+                        <div class="accessories-title">Accessories</div>
+                        <div class="bamboo-balance">
+                            <i class="fas fa-leaf bamboo-icon"></i> 750
+                        </div>
+                    </div>
+                    <div class="accessories-grid">
+                        <div class="accessory-item">
+                            <i class="fas fa-hat-wizard accessory-icon"></i>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-glasses accessory-icon"></i>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-scarf accessory-icon"></i>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-socks accessory-icon"></i>
+                            <div class="accessory-new"></div>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-tshirt accessory-icon"></i>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-crown accessory-icon"></i>
+                            <div class="accessory-new"></div>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-mask accessory-icon"></i>
+                        </div>
+                        <div class="accessory-item">
+                            <i class="fas fa-plus accessory-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panda-challenges">
+                    <div class="challenges-title">Daily Challenges</div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <div class="challenge-name">Complete 16-hour fast</div>
+                            <div class="challenge-description">2/3 completed</div>
+                        </div>
+                        <div class="challenge-reward">+50</div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <div class="challenge-name">7-day streak</div>
+                            <div class="challenge-description">Complete fasts for 7 days in a row</div>
+                        </div>
+                        <div class="challenge-reward">+100</div>
+                    </div>
+                    <div class="challenge-item">
+                        <div class="challenge-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="challenge-info">
+                            <div class="challenge-name">Health check</div>
+                            <div class="challenge-description">Record your weight and measurements</div>
+                        </div>
+                        <div class="challenge-reward">+25</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Screen -->
+            <div class="settings-screen">
+                <div class="settings-header">
+                    <div class="settings-title">Settings</div>
+                    <div class="settings-subtitle">Customize your experience</div>
+                </div>
+
+                <div class="settings-section">
+                    <div class="settings-section-title">Fasting Preferences</div>
+                    <div class="settings-option">
+                        <div class="option-name">Fasting Method</div>
+                        <div class="option-value">18:6 Method</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">Start Time</div>
+                        <div class="option-value">8:00 PM</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">End Time</div>
+                        <div class="option-value">2:00 PM</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">Fasting Days</div>
+                        <div class="option-value">Mon, Wed, Fri</div>
+                        <i class="fas fa-chevron-right arrow-icon"></i>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <div class="settings-section-title">Notifications</div>
+                    <div class="settings-option">
+                        <div class="option-name">Fast Start Reminder</div>
+                        <label class="option-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">Fast End Reminder</div>
+                        <label class="option-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">Milestone Alerts</div>
+                        <label class="option-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div class="settings-option">
+                        <div class="option-name">Panda Reminders</div>
+                        <label class="option-toggle">
+                            <input type="checkbox" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-button">
+                    <div class="option-name">Account Settings</div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+
+                <div class="settings-button">
+                    <div class="option-name">Help & Support</div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+
+                <div class="settings-button">
+                    <div class="option-name">Privacy Policy</div>
+                    <i class="fas fa-chevron-right arrow-icon"></i>
+                </div>
+
+                <div class="settings-button danger">
+                    <div class="option-name">Log Out</div>
+                    <i class="fas fa-sign-out-alt arrow-icon"></i>
+                </div>
+
+                <div class="settings-version">
+                    PandaFast v1.0.2
+                </div>
+            </div>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-nav">
+            <div class="tab-item active">
+                <i class="fas fa-clock tab-icon"></i>
+                <div class="tab-label">Timer</div>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-chart-simple tab-icon"></i>
+                <div class="tab-label">Stats</div>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-paw tab-icon"></i>
+                <div class="tab-label">Panda</div>
+            </div>
+            <div class="tab-item">
+                <i class="fas fa-gear tab-icon"></i>
+                <div class="tab-label">Settings</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Tab navigation functionality
+            const tabItems = document.querySelectorAll('.tab-item');
+            const screens = [
+                document.querySelector('.timer-screen'),
+                document.querySelector('.stats-screen'),
+                document.querySelector('.panda-screen'),
+                document.querySelector('.settings-screen')
+            ];
+            
+            tabItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    // Update active tab
+                    tabItems.forEach(tab => tab.classList.remove('active'));
+                    item.classList.add('active');
+                    
+                    // Show corresponding screen
+                    screens.forEach(screen => screen.style.display = 'none');
+                    screens[index].style.display = 'flex';
+                });
+            });
+            
+            // Timer functionality
+            let timerRunning = true;
+            const timerBtn = document.querySelector('.timer-btn.primary');
+            
+            timerBtn.addEventListener('click', () => {
+                if (timerRunning) {
+                    timerBtn.textContent = 'Resume';
+                    timerRunning = false;
+                } else {
+                    timerBtn.textContent = 'Pause';
+                    timerRunning = true;
+                }
+            });
+            
+            // Countdown timer simulation
+            let hours = 14;
+            let minutes = 26;
+            let timerInterval;
+            
+            function updateTimerDisplay() {
+                const timerValue = document.querySelector('.timer-value');
+                timerValue.textContent = `${hours}:${minutes < 10 ? '0' : ''}${minutes}`;
+                
+                // Update progress circle (for demonstration)
+                const progress = document.querySelector('.timer-progress');
+                const totalMinutes = 18 * 60; // 18 hours in minutes
+                const remainingMinutes = hours * 60 + minutes;
+                const progressPercentage = ((totalMinutes - remainingMinutes) / totalMinutes) * 100;
+                progress.style.background = `conic-gradient(var(--primary-color) 0% ${progressPercentage}%, var(--primary-light) ${progressPercentage}% 100%)`;
+            }
+            
+            function startTimer() {
+                timerInterval = setInterval(() => {
+                    if (timerRunning) {
+                        if (minutes === 0) {
+                            if (hours === 0) {
+                                clearInterval(timerInterval);
+                                // Timer completed
+                                return;
+                            }
+                            hours--;
+                            minutes = 59;
+                        } else {
+                            minutes--;
+                        }
+                        updateTimerDisplay();
+                    }
+                }, 60000); // Update every minute (in real app would be more precise)
+            }
+            
+            startTimer();
+            
+            // For demonstration, update faster
+            setInterval(() => {
+                if (timerRunning && Math.random() > 0.7) { // Randomly update for demo purposes
+                    if (minutes === 0) {
+                        if (hours > 0) {
+                            hours--;
+                            minutes = 59;
+                        }
+                    } else {
+                        minutes--;
+                    }
+                    updateTimerDisplay();
+                }
+            }, 3000);
+            
+            // Panda messages
+            const pandaMessages = [
+                "You're doing great! Keep it up and I'll grow strong with you!",
+                "Halfway there! I'm so proud of you!",
+                "Remember to stay hydrated during your fast!",
+                "You've got this! I believe in you!",
+                "We're making progress together! Keep going!"
+            ];
+            
+            function updatePandaMessage() {
+                const messageElement = document.querySelector('.panda-message');
+                const randomIndex = Math.floor(Math.random() * pandaMessages.length);
+                messageElement.textContent = pandaMessages[randomIndex];
+            }
+            
+            // Change panda message periodically
+            setInterval(updatePandaMessage, 30000);
+            
+            // Stats Chart Interaction
+            const chartOptions = document.querySelectorAll('.chart-option');
+            
+            chartOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    chartOptions.forEach(opt => opt.classList.remove('active'));
+                    option.classList.add('active');
+                    
+                    // For a real app, this would update the chart data
+                    // For this demo, we'll randomly change the bar heights
+                    const bars = document.querySelectorAll('.chart-bar-inner');
+                    bars.forEach(bar => {
+                        const randomHeight = Math.floor(Math.random() * 100) + 20;
+                        bar.style.height = `${randomHeight}%`;
+                    });
+                });
+            });
+            
+            // Accessory interaction
+            const accessoryItems = document.querySelectorAll('.accessory-item');
+            
+            accessoryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    // In a real app, this would apply the accessory to the panda
+                    alert('Accessory applied to your panda!');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

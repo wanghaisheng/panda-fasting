@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#C8E6C9" />
+  
+  <!-- Graph -->
+  <rect x="20" y="20" width="60" height="60" fill="#FFFFFF" stroke="#212121" stroke-width="2" rx="5" />
+  
+  <!-- Line chart -->
+  <polyline points="20,65 30,55 40,58 50,45 60,35 70,25 80,20" fill="none" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Points -->
+  <circle cx="30" cy="55" r="3" fill="#4CAF50" />
+  <circle cx="40" cy="58" r="3" fill="#4CAF50" />
+  <circle cx="50" cy="45" r="3" fill="#4CAF50" />
+  <circle cx="60" cy="35" r="3" fill="#4CAF50" />
+  <circle cx="70" cy="25" r="3" fill="#4CAF50" />
+  <circle cx="80" cy="20" r="3" fill="#4CAF50" />
+</svg>
+

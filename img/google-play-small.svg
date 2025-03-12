@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30">
+  <rect width="100" height="30" rx="5" fill="#000000" />
+  
+  <path d="M15,9 L23,15 L15,21 L15,9 Z" fill="#FFFFFF" />
+  <path d="M15,9 L15,21 L10,15 Z" fill="#4CAF50" />
+  <path d="M15,9 L23,15 L25,12 L15,9 Z" fill="#FF9800" />
+  <path d="M15,21 L23,15 L25,18 L15,21 Z" fill="#F44336" />
+  
+  <text x="55" y="13" font-family="Arial" font-size="7" font-weight="normal" text-anchor="middle" fill="#FFFFFF">GET IT ON</text>
+  <text x="55" y="23" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Google Play</text>
+</svg>
+

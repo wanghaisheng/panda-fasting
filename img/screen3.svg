@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 500">
+  <rect width="250" height="500" rx="25" fill="#FFFFFF" />
+  
+  <!-- App header -->
+  <rect x="0" y="0" width="250" height="70" rx="25" fill="#4CAF50" />
+  <text x="125" y="42" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Fasting Timer</text>
+  <circle cx="40" cy="40" r="20" fill="#FFFFFF" />
+  <circle cx="40" cy="40" r="15" fill="#FFFFFF" stroke="#4CAF50" stroke-width="2" />
+  
+  <!-- Timer Circle -->
+  <circle cx="125" cy="180" r="90" fill="#F5F5F5" />
+  <circle cx="125" cy="180" r="85" fill="#FFFFFF" stroke="#4CAF50" stroke-width="5" />
+  <path d="M125,95 A85,85 0 0,1 205,180" fill="none" stroke="#4CAF50" stroke-width="10" />
+  
+  <text x="125" y="170" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" fill="#212121">14:26</text>
+  <text x="125" y="200" font-family="Arial" font-size="16" text-anchor="middle" fill="#616161">remaining</text>
+  
+  <!-- Panda Character -->
+  <circle cx="125" cy="320" r="40" fill="#FFFFFF" stroke="#212121" stroke-width="2" />
+  <circle cx="110" cy="310" r="10" fill="#212121" />
+  <circle cx="140" cy="310" r="10" fill="#212121" />
+  <circle cx="113" cy="307" r="3" fill="#FFFFFF" />
+  <circle cx="143" cy="307" r="3" fill="#FFFFFF" />
+  <ellipse cx="125" cy="330" rx="15" ry="10" fill="#212121" />
+  <ellipse cx="125" cy="327" rx="7" ry="5" fill="#FFFFFF" />
+  
+  <!-- Encouraging message -->
+  <rect x="50" y="380" width="150" height="50" rx="10" fill="#F5F5F5" />
+  <text x="125" y="405" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#212121">You're doing great!</text>
+  <text x="125" y="425" font-family="Arial" font-size="12" text-anchor="middle" fill="#616161">Your panda is proud of you!</text>
+</svg>
+

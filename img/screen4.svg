@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 500">
+  <rect width="250" height="500" rx="25" fill="#FFFFFF" />
+  
+  <!-- App header -->
+  <rect x="0" y="0" width="250" height="70" rx="25" fill="#4CAF50" />
+  <text x="125" y="42" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Rewards</text>
+  <circle cx="40" cy="40" r="20" fill="#FFFFFF" />
+  <circle cx="40" cy="40" r="15" fill="#FFFFFF" stroke="#4CAF50" stroke-width="2" />
+  
+  <!-- Congratulations message -->
+  <text x="125" y="100" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#212121">Congratulations!</text>
+  <text x="125" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#616161">You've completed your fast</text>
+  
+  <!-- Bamboo reward -->
+  <rect x="75" y="150" width="100" height="40" rx="20" fill="#4CAF50" />
+  <text x="125" y="175" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#FFFFFF">+50 Bamboo</text>
+  
+  <!-- Panda Character -->
+  <circle cx="125" cy="250" r="50" fill="#FFFFFF" stroke="#212121" stroke-width="2" />
+  <circle cx="105" cy="235" r="12" fill="#212121" />
+  <circle cx="145" cy="235" r="12" fill="#212121" />
+  <circle cx="108" cy="232" r="4" fill="#FFFFFF" />
+  <circle cx="148" cy="232" r="4" fill="#FFFFFF" />
+  <ellipse cx="125" cy="260" rx="20" ry="12" fill="#212121" />
+  <ellipse cx="125" cy="257" rx="10" ry="6" fill="#FFFFFF" />
+  
+  <!-- Party hat accessory -->
+  <path d="M125,190 L155,235 L95,235 Z" fill="#FF9800" />
+  <circle cx="125" cy="190" r="5" fill="#8D6E63" />
+  
+  <!-- Streak indicator -->
+  <text x="125" y="330" font-family="Arial" font-size="14" text-anchor="middle" fill="#616161">Your Streak</text>
+  <rect x="95" y="340" width="60" height="30" rx="15" fill="#8D6E63" />
+  <text x="125" y="360" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">7 Days</text>
+  
+  <!-- Buttons -->
+  <rect x="25" y="400" width="95" height="50" rx="25" fill="#FFFFFF" stroke="#4CAF50" stroke-width="2" />
+  <text x="72.5" y="430" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#4CAF50">Shop</text>
+  
+  <rect x="130" y="400" width="95" height="50" rx="25" fill="#4CAF50" />
+  <text x="177.5" y="430" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Continue</text>
+</svg>
+

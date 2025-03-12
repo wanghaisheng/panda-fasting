@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 500">
+  <rect width="250" height="500" rx="25" fill="#FFFFFF" />
+  
+  <!-- App header -->
+  <rect x="0" y="0" width="250" height="70" rx="25" fill="#4CAF50" />
+  <text x="125" y="42" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Choose Plan</text>
+  <circle cx="40" cy="40" r="20" fill="#FFFFFF" />
+  <path d="M30,40 L50,40" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  <path d="M30,40 L37,33" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  <path d="M30,40 L37,47" stroke="#212121" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Fasting Plans -->
+  <rect x="25" y="90" width="200" height="70" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" />
+  <text x="125" y="120" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#212121">16:8 Method</text>
+  <text x="125" y="145" font-family="Arial" font-size="14" text-anchor="middle" fill="#616161">16h fast, 8h eating window</text>
+  
+  <rect x="25" y="175" width="200" height="70" rx="10" fill="#4CAF50" />
+  <text x="125" y="205" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#FFFFFF">18:6 Method</text>
+  <text x="125" y="230" font-family="Arial" font-size="14" text-anchor="middle" fill="#FFFFFF">18h fast, 6h eating window</text>
+  
+  <rect x="25" y="260" width="200" height="70" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" />
+  <text x="125" y="290" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#212121">20:4 Method</text>
+  <text x="125" y="315" font-family="Arial" font-size="14" text-anchor="middle" fill="#616161">20h fast, 4h eating window</text>
+
+  <rect x="25" y="345" width="200" height="70" rx="10" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="2" />
+  <text x="125" y="375" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#212121">Custom Plan</text>
+  <text x="125" y="400" font-family="Arial" font-size="14" text-anchor="middle" fill="#616161">Create your own schedule</text>
+  
+  <!-- Continue button -->
+  <rect x="60" y="440" width="130" height="40" rx="20" fill="#4CAF50" />
+  <text x="125" y="465" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Continue</text>
+</svg>
+

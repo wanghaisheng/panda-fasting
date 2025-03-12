@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 500">
+  <rect width="250" height="500" rx="25" fill="#FFFFFF" />
+  
+  <!-- App header -->
+  <rect x="0" y="0" width="250" height="70" rx="25" fill="#4CAF50" />
+  <text x="125" y="42" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#FFFFFF">PandaFast</text>
+  <circle cx="40" cy="40" r="20" fill="#FFFFFF" />
+  <circle cx="40" cy="40" r="15" fill="#FFFFFF" stroke="#4CAF50" stroke-width="2" />
+  
+  <!-- Welcome Screen -->
+  <text x="125" y="100" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#212121">Welcome!</text>
+  <text x="125" y="130" font-family="Arial" font-size="16" text-anchor="middle" fill="#616161">Let's start your fasting journey</text>
+  
+  <!-- Panda illustration -->
+  <circle cx="125" cy="220" r="70" fill="#FFFFFF" stroke="#212121" stroke-width="3" />
+  <circle cx="95" cy="195" r="20" fill="#212121" />
+  <circle cx="155" cy="195" r="20" fill="#212121" />
+  <circle cx="100" cy="190" r="7" fill="#FFFFFF" />
+  <circle cx="160" cy="190" r="7" fill="#FFFFFF" />
+  <ellipse cx="125" cy="240" rx="30" ry="20" fill="#212121" />
+  <ellipse cx="125" cy="235" rx="15" ry="10" fill="#FFFFFF" />
+  
+  <!-- Bamboo decoration -->
+  <rect x="30" y="180" width="10" height="150" rx="5" fill="#4CAF50" />
+  <rect x="210" y="180" width="10" height="150" rx="5" fill="#4CAF50" />
+  <ellipse cx="35" cy="220" rx="10" ry="5" fill="#C8E6C9" />
+  <ellipse cx="35" cy="260" rx="10" ry="5" fill="#C8E6C9" />
+  <ellipse cx="35" cy="300" rx="10" ry="5" fill="#C8E6C9" />
+  <ellipse cx="215" cy="220" rx="10" ry="5" fill="#C8E6C9" />
+  <ellipse cx="215" cy="260" rx="10" ry="5" fill="#C8E6C9" />
+  <ellipse cx="215" cy="300" rx="10" ry="5" fill="#C8E6C9" />
+  
+  <!-- Get Started button -->
+  <rect x="50" y="350" width="150" height="50" rx="25" fill="#4CAF50" />
+  <text x="125" y="380" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Get Started</text>
+  
+  <!-- Login link -->
+  <text x="125" y="430" font-family="Arial" font-size="14" text-anchor="middle" fill="#616161">Already have an account?</text>
+  <text x="125" y="455" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#4CAF50">Log In</text>
+</svg>
+

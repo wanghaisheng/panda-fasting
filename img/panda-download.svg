@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250">
+  <!-- Panda -->
+  <circle cx="100" cy="100" r="70" fill="#FFFFFF" stroke="#212121" stroke-width="3" />
+  <circle cx="70" cy="80" r="20" fill="#212121" />
+  <circle cx="130" cy="80" r="20" fill="#212121" />
+  <circle cx="75" cy="75" r="7" fill="#FFFFFF" />
+  <circle cx="135" cy="75" r="7" fill="#FFFFFF" />
+  <ellipse cx="100" cy="115" rx="25" ry="15" fill="#212121" />
+  <ellipse cx="100" cy="110" rx="12" ry="7" fill="#FFFFFF" />
+  
+  <!-- Smartphone -->
+  <rect x="70" y="140" width="60" height="100" rx="10" fill="#F5F5F5" stroke="#212121" stroke-width="3" />
+  <rect x="75" y="150" width="50" height="70" rx="5" fill="#4CAF50" />
+  <circle cx="100" cy="230" r="10" fill="#E0E0E0" />
+  
+  <!-- Timer on screen -->
+  <circle cx="100" cy="185" r="25" fill="#FFFFFF" stroke="#C8E6C9" stroke-width="5" stroke-dasharray="60 125" />
+  <text x="100" y="190" font-family="Arial" font-size="10" font-weight="bold" text-anchor="middle" fill="#212121">16:8</text>
+  
+  <!-- Download arrow -->
+  <path d="M155,100 L155,140 L140,125 M155,140 L170,125" fill="none" stroke="#4CAF50" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="155" cy="100" r="15" fill="#C8E6C9" />
+</svg>
+

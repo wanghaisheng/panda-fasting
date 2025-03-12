@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#C8E6C9" />
+  
+  <!-- Pandas -->
+  <circle cx="30" cy="40" r="15" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+  <circle cx="25" cy="35" r="4" fill="#212121" />
+  <circle cx="35" cy="35" r="4" fill="#212121" />
+  <circle cx="26" cy="34" r="1.5" fill="#FFFFFF" />
+  <circle cx="36" cy="34" r="1.5" fill="#FFFFFF" />
+  <ellipse cx="30" cy="42" rx="6" ry="4" fill="#212121" />
+  <ellipse cx="30" cy="41" rx="3" ry="2" fill="#FFFFFF" />
+  
+  <circle cx="70" cy="40" r="15" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+  <circle cx="65" cy="35" r="4" fill="#212121" />
+  <circle cx="75" cy="35" r="4" fill="#212121" />
+  <circle cx="66" cy="34" r="1.5" fill="#FFFFFF" />
+  <circle cx="76" cy="34" r="1.5" fill="#FFFFFF" />
+  <ellipse cx="70" cy="42" rx="6" ry="4" fill="#212121" />
+  <ellipse cx="70" cy="41" rx="3" ry="2" fill="#FFFFFF" />
+  
+  <circle cx="50" cy="65" r="18" fill="#FFFFFF" stroke="#212121" stroke-width="1.5" />
+  <circle cx="44" cy="60" r="5" fill="#212121" />
+  <circle cx="56" cy="60" r="5" fill="#212121" />
+  <circle cx="45" cy="59" r="2" fill="#FFFFFF" />
+  <circle cx="57" cy="59" r="2" fill="#FFFFFF" />
+  <ellipse cx="50" cy="68" rx="8" ry="5" fill="#212121" />
+  <ellipse cx="50" cy="67" rx="4" ry="2.5" fill="#FFFFFF" />
+  
+  <!-- Connection -->
+  <path d="M36,50 C36,50 42,65 50,65" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="4 2" />
+  <path d="M64,50 C64,50 58,65 50,65" fill="none" stroke="#4CAF50" stroke-width="2" stroke-dasharray="4 2" />
+</svg>
+

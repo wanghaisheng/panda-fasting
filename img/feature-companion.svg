@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="45" fill="#C8E6C9" />
+  
+  <!-- Panda -->
+  <circle cx="50" cy="50" r="30" fill="#FFFFFF" stroke="#212121" stroke-width="2" />
+  <circle cx="38" cy="42" r="8" fill="#212121" />
+  <circle cx="62" cy="42" r="8" fill="#212121" />
+  <circle cx="40" cy="40" r="3" fill="#FFFFFF" />
+  <circle cx="64" cy="40" r="3" fill="#FFFFFF" />
+  <ellipse cx="50" cy="55" rx="12" ry="8" fill="#212121" />
+  <ellipse cx="50" cy="52" rx="6" ry="4" fill="#FFFFFF" />
+  
+  <!-- Heart -->
+  <path d="M80,35 A10,10 0 0,0 65,35 A10,10 0 0,0 50,35 A10,10 0 0,0 65,60 Z" fill="#E57373" />
+</svg>
+

@@ -1,132 +1,638 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="keywords" content="mobile, simulator, mobile design, mobile app">
-  <meta name="author" content="Your Name or Company">
-  <meta http-equiv="Content-Language" content="en">
-
-  <!-- Canonical Link -->
-  <link rel="canonical" href="https://www.yourwebsite.com/pc-simulator" />
-
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="PC Simulator">
-  <meta property="og:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta property="og:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta property="og:url" content="https://www.yourwebsite.com/pc-simulator">
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="PC Simulator">
-  <meta name="twitter:description" content="A mobile simulator designed to demonstrate mobile interface design.">
-  <meta name="twitter:image" content="https://www.yourwebsite.com/pc-simulator-image.jpg">
-  <meta name="twitter:creator" content="@yourtwitterhandle">
-
-  <!-- Favicon -->
-  <link rel="icon" href="https://www.yourwebsite.com/favicon.ico" type="image/x-icon">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag('js', new Date());
-    gtag('config', 'UA-XXXXX-Y');
-  </script>
-
-  <!-- Microsoft Clarity -->
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y) {
-      window.clarity=window.clarity||function(){(clarity.q=clarity.q||[]).push(arguments)};
-      clarity('set', 'anonymizeIP', true);
-      i=l.createElement('script');i.async=1;i.src=r;i.type='text/javascript';
-      t=l.getElementsByTagName('script')[0];t.parentNode.insertBefore(i,t);
-    })(document,window,'script','https://www.clarity.ms/tag/XXXXXX');
-  </script>
-
-  <title>PC Simulator</title>
-
-  <style>
-    /* Global Styles */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f0f0f0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
-
-    .mobile-container {
-      width: 360px;
-      height: 640px;
-      border: 16px solid black;
-      border-radius: 16px;
-      background-color: #fff;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .content {
-      font-size: 1.2rem;
-      color: #333;
-    }
-
-    /* Adjustments for PC */
-    @media (min-width: 768px) {
-      .mobile-container {
-        width: 600px;
-        height: 1000px;
-      }
-
-      .content {
-        font-size: 1.5rem;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .mobile-container {
-        width: 800px;
-        height: 1400px;
-      }
-
-      .content {
-        font-size: 1.8rem;
-      }
-    }
-
-    /* Additional responsiveness for larger screens */
-    @media (min-width: 1200px) {
-      body {
-        justify-content: flex-start;
-      }
-
-      .mobile-container {
-        margin-top: 50px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PandaFast - Your Fasting Companion</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <div class="mobile-container">
-    <div class="content">
-      <p>Mobile Simulator Screen</p>
-      <p>PC Version: Adjusted for larger screens.</p>
-    </div>
-  </div>
-</body>
+    <div class="app-container">
+        <!-- Header section -->
+        <header>
+            <div class="logo">
+                <img src="img/panda-logo.svg" alt="PandaFast Logo">
+                <h1>PandaFast</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Success Stories</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#download" class="nav-cta">Download</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </header>
 
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Meet Your Fasting Buddy</h1>
+                <h2>Make intermittent fasting fun with your personal panda companion</h2>
+                <p>Join over 1 million users who've transformed their health journey with PandaFast</p>
+                <div class="hero-cta">
+                    <a href="#download" class="primary-btn">Download Now</a>
+                    <a href="#how-it-works" class="secondary-btn">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <h3>1M+</h3>
+                        <p>Active Users</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4.8★</h3>
+                        <p>App Rating</p>
+                    </div>
+                    <div class="stat">
+                        <h3>10M+</h3>
+                        <p>Fasting Hours</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="img/panda-hero.svg" alt="PandaFast App Demo" class="main-app-image">
+                <div class="floating-element bamboo">
+                    <img src="img/bamboo.svg" alt="Bamboo">
+                </div>
+                <div class="floating-element leaf">
+                    <img src="img/leaf.svg" alt="Leaf">
+                </div>
+                <div class="floating-element timer">
+                    <div class="timer-circle">
+                        <span class="timer-text">14:26</span>
+                        <span class="timer-label">remaining</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Taoism Inspiration section -->
+        <section class="taoism-inspiration">
+            <div class="section-header">
+                <h2>Ancient Wisdom for Modern Wellness</h2>
+                <p>Discover how traditional Chinese philosophy guides our approach to intermittent fasting</p>
+            </div>
+            <div class="inspiration-container">
+                <div class="inspiration-content">
+                    <h3>Inspired by Taoist Principles</h3>
+                    <p>PandaFast draws its core philosophy from ancient Taoist practices that have kept Chinese people healthy for millennia. Taoism teaches balance between action and inaction, embracing cycles of fullness and emptiness – principles perfectly aligned with intermittent fasting.</p>
+                    <p>The concept of "wu wei" (effortless action) teaches us that sometimes the most powerful action is non-action – including giving your digestive system regular periods of rest.</p>
+                    <h3>The Secret to Natural Slimness</h3>
+                    <p>Have you noticed how many Chinese people maintain naturally slim physiques throughout their lives? This isn't just genetics – it's lifestyle. Traditional eating patterns in China naturally incorporate periods of fasting and moderation, allowing the body to process food efficiently and prevent excessive fat storage.</p>
+                    <p>With PandaFast, we've adapted these time-tested principles into a modern, easy-to-follow approach that fits your busy lifestyle while delivering the same benefits that have kept Chinese people healthy for generations.</p>
+                    <div class="quote-box">
+                        <p>"The sage fasts of the heart, not the body."</p>
+                        <span>- Taoist wisdom, reinterpreted for modern wellness</span>
+                    </div>
+                </div>
+                <div class="inspiration-image">
+                    <img src="img/leaf-circle.svg" alt="Taoist Harmony Symbol" class="harmony-symbol">
+                    <img src="img/bamboo.svg" alt="Bamboo" class="bamboo-decoration">
+                </div>
+            </div>
+        </section>
+
+        <!-- Features section -->
+        <section id="features" class="features">
+            <div class="section-header">
+                <h2>Why Choose PandaFast?</h2>
+                <p>Your adorable panda companion guides you through your fasting journey</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-companion.svg" alt="Panda Companion">
+                    </div>
+                    <h3>Virtual Panda Pet</h3>
+                    <p>Your personal panda grows healthier as you maintain your fasting schedule</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-tracking.svg" alt="Fasting Tracking">
+                    </div>
+                    <h3>Simple Tracking</h3>
+                    <p>Easily track your fasting windows with intuitive timers and reminders</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-progress.svg" alt="Progress Visualization">
+                    </div>
+                    <h3>Visual Progress</h3>
+                    <p>Watch your panda and your health metrics improve together</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-rewards.svg" alt="Rewards System">
+                    </div>
+                    <h3>Fun Rewards</h3>
+                    <p>Earn bamboo points to customize your panda and unlock special items</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-community.svg" alt="Community Support">
+                    </div>
+                    <h3>Panda Community</h3>
+                    <p>Connect with other fasters and share your panda's adventures</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <img src="img/feature-plans.svg" alt="Fasting Plans">
+                    </div>
+                    <h3>Flexible Plans</h3>
+                    <p>Choose from popular fasting protocols or create your custom schedule</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works section -->
+        <section id="how-it-works" class="how-it-works">
+            <div class="section-header">
+                <h2>How PandaFast Works</h2>
+                <p>Simple, engaging, and effective way to build healthy fasting habits</p>
+            </div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Choose Your Plan</h3>
+                        <p>Select from popular fasting methods like 16:8, 18:6, or create your custom schedule</p>
+                        <div class="step-image">
+                            <img src="img/step1.svg" alt="Choose Your Plan">
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Meet Your Panda</h3>
+                        <p>Customize your virtual panda companion who will guide your fasting journey</p>
+                        <div class="step-image">
+                            <img src="img/step2.svg" alt="Meet Your Panda">
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Start Fasting</h3>
+                        <p>Your panda helps you track fasting windows with timely notifications and encouragement</p>
+                        <div class="step-image">
+                            <img src="img/step3.svg" alt="Start Fasting">
+                        </div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Earn Rewards</h3>
+                        <p>Complete fasts to earn bamboo points and watch your panda thrive with you</p>
+                        <div class="step-image">
+                            <img src="img/step4.svg" alt="Earn Rewards">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="app-preview">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="carousel-container">
+                            <div class="carousel-slide">
+                                <img src="img/screen1.svg" alt="App Screen 1">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/screen2.svg" alt="App Screen 2">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/screen3.svg" alt="App Screen 3">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="img/screen4.svg" alt="App Screen 4">
+                            </div>
+                        </div>
+                        <div class="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials section -->
+        <section id="testimonials" class="testimonials">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Join thousands who've transformed their fasting experience with PandaFast</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"My panda pet makes fasting actually fun! I've lost 15 pounds in 2 months and my energy levels are through the roof. I love how my panda celebrates with me when I complete a fast!"</p>
+                        <div class="testimonial-author">
+                            <img src="img/user1.svg" alt="Sarah J.">
+                            <div class="author-info">
+                                <h4>Sarah J.</h4>
+                                <p>Lost 15 lbs in 2 months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"I tried several fasting apps but couldn't stick with any of them until PandaFast. Taking care of my virtual panda keeps me motivated. I've been consistent for 6 months now!"</p>
+                        <div class="testimonial-author">
+                            <img src="img/user2.svg" alt="Michael T.">
+                            <div class="author-info">
+                                <h4>Michael T.</h4>
+                                <p>Fasting consistently for 6 months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"The gamification aspect of PandaFast is genius! Earning bamboo to accessorize my panda makes me look forward to completing my fasting goals. My blood sugar is now normal for the first time in years."</p>
+                        <div class="testimonial-author">
+                            <img src="img/user3.svg" alt="Jennifer K.">
+                            <div class="author-info">
+                                <h4>Jennifer K.</h4>
+                                <p>Normalized blood sugar levels</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            <div class="results-summary">
+                <div class="result-stat">
+                    <h3>94%</h3>
+                    <p>Report better fasting adherence</p>
+                </div>
+                <div class="result-stat">
+                    <h3>12 lbs</h3>
+                    <p>Average weight loss in 3 months</p>
+                </div>
+                <div class="result-stat">
+                    <h3>89%</h3>
+                    <p>Experience improved energy</p>
+                </div>
+                <div class="result-stat">
+                    <h3>8.5 hrs</h3>
+                    <p>Average improvement in sleep</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing section -->
+        <section id="pricing" class="pricing">
+            <div class="section-header">
+                <h2>Simple, Transparent Pricing</h2>
+                <p>Start your fasting journey with your panda companion today</p>
+            </div>
+            <div class="pricing-toggle">
+                <span>Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="billing-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span>Yearly <span class="save-badge">Save 40%</span></span>
+            </div>
+            <div class="pricing-plans">
+                <div class="pricing-plan free">
+                    <div class="plan-header">
+                        <h3>Free</h3>
+                        <div class="price">
+                            <span class="amount">$0</span>
+                            <span class="period">forever</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Basic panda companion</li>
+                            <li><i class="fas fa-check"></i> Standard fasting timer</li>
+                            <li><i class="fas fa-check"></i> 3 preset fasting plans</li>
+                            <li><i class="fas fa-check"></i> Basic progress tracking</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Custom panda accessories</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Advanced health insights</li>
+                            <li class="disabled"><i class="fas fa-times"></i> Community challenges</li>
+                        </ul>
+                    </div>
+                    <div class="plan-cta">
+                        <a href="#download" class="secondary-btn">Download Free</a>
+                    </div>
+                </div>
+                <div class="pricing-plan premium highlighted">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="plan-header">
+                        <h3>Premium</h3>
+                        <div class="price monthly-price">
+                            <span class="amount">$7.99</span>
+                            <span class="period">per month</span>
+                        </div>
+                        <div class="price yearly-price" style="display: none;">
+                            <span class="amount">$4.99</span>
+                            <span class="period">per month, billed yearly</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything in Free, plus:</li>
+                            <li><i class="fas fa-check"></i> Advanced panda companion</li>
+                            <li><i class="fas fa-check"></i> Custom fasting schedules</li>
+                            <li><i class="fas fa-check"></i> 50+ panda accessories</li>
+                            <li><i class="fas fa-check"></i> Detailed health analytics</li>
+                            <li><i class="fas fa-check"></i> Weekly challenges & rewards</li>
+                            <li><i class="fas fa-check"></i> Priority customer support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-cta">
+                        <a href="#download" class="primary-btn">Start 7-Day Free Trial</a>
+                    </div>
+                    <div class="money-back">
+                        <p>30-day money-back guarantee</p>
+                    </div>
+                </div>
+                <div class="pricing-plan family">
+                    <div class="plan-header">
+                        <h3>Family</h3>
+                        <div class="price monthly-price">
+                            <span class="amount">$14.99</span>
+                            <span class="period">per month</span>
+                        </div>
+                        <div class="price yearly-price" style="display: none;">
+                            <span class="amount">$8.99</span>
+                            <span class="period">per month, billed yearly</span>
+                        </div>
+                    </div>
+                    <div class="plan-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Everything in Premium, plus:</li>
+                            <li><i class="fas fa-check"></i> Up to 6 family accounts</li>
+                            <li><i class="fas fa-check"></i> Family panda interaction</li>
+                            <li><i class="fas fa-check"></i> Family challenges & goals</li>
+                            <li><i class="fas fa-check"></i> Shared progress dashboard</li>
+                            <li><i class="fas fa-check"></i> Family achievement badges</li>
+                            <li><i class="fas fa-check"></i> 24/7 priority support</li>
+                        </ul>
+                    </div>
+                    <div class="plan-cta">
+                        <a href="#download" class="secondary-btn">Start 7-Day Free Trial</a>
+                    </div>
+                    <div class="money-back">
+                        <p>30-day money-back guarantee</p>
+                    </div>
+                </div>
+            </div>
+            <div class="guarantee-banner">
+                <div class="guarantee-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="guarantee-text">
+                    <h3>100% Satisfaction Guarantee</h3>
+                    <p>If you're not completely satisfied with PandaFast Premium or Family plan within 30 days, we'll refund your payment in full. No questions asked.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ section -->
+        <section class="faq">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about PandaFast</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is intermittent fasting?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Intermittent fasting is an eating pattern that cycles between periods of fasting and eating. It doesn't specify which foods to eat but rather when you should eat them. Common methods include the 16/8 method (16 hours fasting, 8 hours eating) and the 5:2 approach (eating normally 5 days, reducing calories 2 days).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the virtual panda companion work?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your virtual panda companion grows and thrives as you maintain your fasting schedule. Each completed fast earns bamboo points that you can use to feed and accessorize your panda. Your panda's health and happiness directly reflect your fasting consistency, providing visual motivation and making the experience fun!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is PandaFast suitable for beginners?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! PandaFast is designed to be beginner-friendly with gradually increasing fasting schedules, helpful tips, and a supportive panda companion to guide you through the process. The app includes educational content to help you understand the benefits and best practices of intermittent fasting.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I switch between different fasting plans?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! PandaFast allows you to easily switch between different fasting protocols including 16:8, 18:6, 20:4, 5:2, and more. You can also create custom fasting schedules to fit your lifestyle. Your panda companion adapts to any schedule you choose!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I cancel my subscription?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can easily cancel your subscription anytime from your account settings in the app or through your app store subscription management. Your access will continue until the end of your current billing period. If you cancel within the 30-day satisfaction guarantee period, you can contact our support team for a full refund.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Will my data be secure?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We take your privacy seriously. All your personal data is encrypted and securely stored. PandaFast never sells your personal information to third parties. You can review our comprehensive privacy policy in the app for more details on how we protect your information.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download section -->
+        <section id="download" class="download">
+            <div class="section-header">
+                <h2>Start Your Fasting Journey Today</h2>
+                <p>Download PandaFast and meet your new fasting companion</p>
+            </div>
+            <div class="download-container">
+                <div class="download-content">
+                    <h3>Your Panda Companion is Waiting!</h3>
+                    <p>Join over 1 million users who've transformed their health with PandaFast. Download now and enjoy:</p>
+                    <ul class="download-benefits">
+                        <li><i class="fas fa-check-circle"></i> Fun, gamified fasting experience</li>
+                        <li><i class="fas fa-check-circle"></i> Personalized virtual panda companion</li>
+                        <li><i class="fas fa-check-circle"></i> Easy-to-follow fasting schedules</li>
+                        <li><i class="fas fa-check-circle"></i> Supportive community of fasters</li>
+                        <li><i class="fas fa-check-circle"></i> Helpful reminders and insights</li>
+                    </ul>
+                    <div class="app-store-buttons">
+                        <a href="#" class="app-store-btn">
+                            <img src="img/app-store.svg" alt="Download on the App Store">
+                        </a>
+                        <a href="#" class="app-store-btn">
+                            <img src="img/google-play.svg" alt="Get it on Google Play">
+                        </a>
+                    </div>
+                    <div class="qr-code">
+                        <img src="img/qr-code.svg" alt="Scan to download">
+                        <p>Scan to download</p>
+                    </div>
+                </div>
+                <div class="download-image">
+                    <img src="img/panda-download.svg" alt="PandaFast Download" class="panda-download-img">
+                    <div class="floating-element bamboo-download">
+                        <img src="img/bamboo-stack.svg" alt="Bamboo Stack">
+                    </div>
+                    <div class="floating-element leaf-download">
+                        <img src="img/leaf-circle.svg" alt="Leaf Circle">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="img/panda-logo.svg" alt="PandaFast Logo">
+                    <h2>PandaFast</h2>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Company</h3>
+                        <ul>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Press</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Resources</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Fasting Guides</a></li>
+                            <li><a href="#">Success Stories</a></li>
+                            <li><a href="#">Health Research</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Support</h3>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Community</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Cookie Policy</a></li>
+                            <li><a href="#">GDPR Compliance</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <div class="app-store-links">
+                    <a href="#"><img src="img/app-store-small.svg" alt="App Store"></a>
+                    <a href="#"><img src="img/google-play-small.svg" alt="Google Play"></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 PandaFast. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-top-btn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu">
+        <div class="mobile-menu-header">
+            <div class="logo">
+                <img src="img/panda-logo.svg" alt="PandaFast Logo">
+                <h1>PandaFast</h1>
+            </div>
+            <button class="close-menu">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#download" class="mobile-cta">Download</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
 </html>
